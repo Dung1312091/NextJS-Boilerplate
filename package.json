@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "build": "next build",
     "start": "next start",
-    "eslint-check": "eslint ./ --cache --ignore-pattern .gitignore",
+    "eslint-check": "eslint ./ --ignore-pattern .gitignore",
     "eslint-fix": "eslint . --fix"
   },
   "pre-commit": [
