@@ -1,0 +1,51 @@
+{
+  "name": "hdbank",
+  "version": "1.0.0",
+  "description": "this is boilerplate nextjs with redux, redux-saga, i18n",
+  "main": "index.js",
+  "scripts": {
+    "pre-commit": "lint-staged",
+    "dev": "nodemon server.js",
+    "build": "next build",
+    "start": "next start",
+    "eslint-check": "eslint ./ --cache --ignore-pattern .gitignore",
+    "eslint-fix": "eslint . --fix"
+  },
+  "pre-commit": [
+    "eslint-check"
+  ],
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.3",
+    "express": "^4.16.4",
+    "lru-cache": "^4.1.3",
+    "next": "^7.0.2",
+    "next-redux-saga": "^3.0.0",
+    "next-redux-wrapper": "^2.0.0",
+    "node-sass": "^4.9.4",
+    "nprogress": "^0.2.0",
+    "pre-commit": "^1.2.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-ga": "^2.5.3",
+    "react-intl": "^2.7.2",
+    "react-redux": "^5.0.7",
+    "reactstrap": "^6.5.0",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "nodemon": "^1.18.4",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-logger": "^3.0.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
