@@ -19,6 +19,11 @@ export default class MyDocument extends Document {
             type="text/css"
             href="/static/styles/nprogress.css"
           />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="/static/styles/style.css"
+          />
         </Head>
         <body>
           <Main />

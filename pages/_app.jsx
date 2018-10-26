@@ -13,11 +13,15 @@ import { IntlProvider, addLocaleData } from "react-intl";
 import locale_en from "react-intl/locale-data/en";
 import locale_ja from "react-intl/locale-data/ja";
 import locale_vi from "react-intl/locale-data/vi";
-import messages_ja from "../translations/ja.json";
-import messages_en from "../translations/en.json";
-import messages_vi from "../translations/vi.json";
-
+import messages_ja from "../static/translations/ja.json";
+import messages_en from "../static/translations/en.json";
+import messages_vi from "../static/translations/vi.json";
+//import css bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
+
+//import action redux
+import { getCommon } from "../actions/common";
+import { isEmpty } from "../utils//globalFuntion";
 const messages = {
   ja: messages_ja,
   en: messages_en,
@@ -28,13 +32,28 @@ Router.events.on("routeChangeStart", () => {
   NProgress.start();
 });
 Router.events.on("routeChangeComplete", () => {
+  if (process.env.NODE_ENV !== "production") {
+    const els = document.querySelectorAll(
+      'link[href*="/_next/static/css/styles.chunk.css"]'
+    );
+    const timestamp = new Date().valueOf();
+    els[0].href = "/_next/static/css/styles.chunk.css?v=" + timestamp;
+  }
   NProgress.done();
 });
 Router.events.on("routeChangeError", () => NProgress.done());
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
-
+    const { store } = ctx;
+    console.log("===>", store.getState());
+    if (isEmpty(store.getState().commonReducer.commons)) {
+      store.dispatch(
+        getCommon({
+          local: "vi"
+        })
+      );
+    }
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps({ ctx });
     }

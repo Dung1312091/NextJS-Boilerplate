@@ -1,3 +1,3 @@
 module.exports = {
-  baseUrl: "https://jsonplaceholder.typicode.com"
+  baseUrl: "http://hdbank.unit.vn/hdbank/api"
 };
