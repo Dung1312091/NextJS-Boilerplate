@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-// import logger from "redux-logger";
+import logger from "redux-logger";
 import rootReducer from "./reducers";
 import rootSaga from "./saga/index";
 
@@ -18,7 +18,7 @@ function configureStore(initialState = {}) {
   const store = createStore(
     rootReducer,
     initialState,
-    bindMiddleware([sagaMiddleware])
+    bindMiddleware([sagaMiddleware, logger])
   );
 
   store.runSagaTask = () => {

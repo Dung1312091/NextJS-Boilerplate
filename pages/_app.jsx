@@ -31,7 +31,6 @@ addLocaleData([...locale_en, ...locale_ja, ...locale_vi]);
 Router.events.on("routeChangeStart", () => {
   NProgress.start();
 });
-console.log("process.env.NODE_ENV==>", process.env.NODE_ENV);
 Router.events.on("routeChangeComplete", () => {
   if (process.env.NODE_ENV !== "production") {
     const els = document.querySelectorAll(
