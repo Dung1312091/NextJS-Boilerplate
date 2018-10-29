@@ -1,4 +1,6 @@
 const express = require("express");
+const compression = require("compression");
+const helmet = require("helmet");
 const next = require("next");
 const LRUCache = require("lru-cache");
 const dev = process.env.NODE_ENV !== "production";
@@ -13,10 +15,8 @@ app
   .prepare()
   .then(() => {
     const server = express();
-    // server.use(function(req, res, next) {
-    //   console.log("Time:", Date.now());
-    //   next();
-    // });
+    server.use(compression({ threshold: 0 }));
+    server.use(helmet());
     server.get("/productDetail", (req, res) => {
       const actualPage = "/productDetail";
       const queryParams = { lang: req.query.lang };
