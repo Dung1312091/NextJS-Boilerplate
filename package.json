@@ -7,7 +7,7 @@
     "pre-commit": "lint-staged",
     "dev": "nodemon server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "eslint-check": "eslint ./ --ignore-pattern .gitignore",
     "eslint-fix": "eslint . --fix"
   },
@@ -34,9 +34,11 @@
     "react-ga": "^2.5.3",
     "react-intl": "^2.7.2",
     "react-redux": "^5.0.7",
+    "react-slick": "^0.23.2",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
-    "redux-saga": "^0.16.2"
+    "redux-saga": "^0.16.2",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -45,7 +47,8 @@
     "eslint-plugin-react": "^7.11.1",
     "nodemon": "^1.18.4",
     "redux-devtools-extension": "^2.13.5",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "url-loader": "^1.1.2"
   },
   "keywords": [],
   "author": "",

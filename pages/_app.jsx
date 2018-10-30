@@ -18,7 +18,8 @@ import messages_en from "../static/translations/en.json";
 import messages_vi from "../static/translations/vi.json";
 //import css bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
-
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 //import action redux
 import { getCommon } from "../actions/common";
 import { isEmpty } from "../utils//globalFuntion";

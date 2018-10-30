@@ -18,6 +18,7 @@ app
     server.use(compression({ threshold: 0 }));
     server.use(helmet());
     server.get("/productDetail", (req, res) => {
+      console.log("ahihi");
       const actualPage = "/productDetail";
       const queryParams = { lang: req.query.lang };
       renderAndCache(req, res, actualPage, queryParams);
