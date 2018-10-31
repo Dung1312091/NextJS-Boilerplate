@@ -18,8 +18,20 @@ app
     server.use(compression({ threshold: 0 }));
     server.use(helmet());
     server.get("/productDetail", (req, res) => {
-      console.log("ahihi");
+
       const actualPage = "/productDetail";
+      const queryParams = { lang: req.query.lang };
+      renderAndCache(req, res, actualPage, queryParams);
+    });
+    server.get("/priority-customer", (req, res) => {
+
+      const actualPage = "/priority-customer";
+      const queryParams = { lang: req.query.lang };
+      renderAndCache(req, res, actualPage, queryParams);
+    });
+    server.get("/investor", (req, res) => {
+
+      const actualPage = "/investor";
       const queryParams = { lang: req.query.lang };
       renderAndCache(req, res, actualPage, queryParams);
     });
@@ -28,6 +40,7 @@ app
       const queryParams = { site: req.params.site };
       renderAndCache(req, res, actualPage, queryParams);
     });
+    
     server.get("*", (req, res) => {
       return handle(req, res);
     });

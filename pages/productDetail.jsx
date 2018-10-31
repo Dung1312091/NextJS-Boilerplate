@@ -1,6 +1,14 @@
 import { Component } from "react";
-export default class ProductDetail extends Component {
+import Layout from "./../components/Layout";
+import { withRouter } from 'next/router'
+class ProductDetail extends Component {
   render() {
-    return <div className="textRed">ProductDetail</div>;
+    // console.log("props productdetail:", this.props);
+    return (
+      <Layout>
+        <div className="textRed">ProductDetail</div>
+      </Layout>
+    );
   }
 }
+export default withRouter(ProductDetail);

@@ -1,12 +1,16 @@
 import { withRouter } from "next/router";
-import { Link } from "../../routes";
+import Link from "next/link";
 import React, { Children } from "react";
-import "./style.scss";
-const ActiveLink = withRouter(({ router, children, ...props }) => {
+
+const ActiveLink = React.memo(function ActiveLink({
+  router,
+  children,
+  ...props
+}) {
   return (
     <Link {...props}>
       {React.cloneElement(Children.only(children), {
-        className: router.pathname === props.href ? `active` : null
+        className: router.asPath === props.href ? `active` : null
       })}
     </Link>
   );

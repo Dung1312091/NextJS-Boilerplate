@@ -7,9 +7,9 @@ export default class MyDocument extends Document {
   }
 
   render() {
-    const timestamp = new Date().valueOf();
-    console.log("Document render lai");
-    console.log("timestamp", timestamp);
+    // const timestamp = new Date().valueOf();
+    // console.log("Document render lai");
+    // console.log("timestamp", timestamp);
     return (
       <html>
         <Head>

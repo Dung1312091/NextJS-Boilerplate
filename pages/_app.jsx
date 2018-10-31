@@ -67,7 +67,7 @@ class MyApp extends App {
     Router.router.events.on("routeChangeComplete", logPageView);
   }
   render() {
-    console.log("App render lai");
+    // console.log("App render lai");
     const { Component, pageProps, store } = this.props;
     const language =
       this.props.router.query && this.props.router.query.lang

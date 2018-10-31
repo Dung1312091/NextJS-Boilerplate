@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: center;
 }
+.active {
+  color: red;
+}
+.navbar-left {
+  background-color: yellow;
+}

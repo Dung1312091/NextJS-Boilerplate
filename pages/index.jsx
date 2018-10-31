@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 class Index extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout key={1}>
         <h1>Home page</h1>
       </Layout>
     );
